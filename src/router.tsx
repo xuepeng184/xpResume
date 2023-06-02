@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Root from './root';
 import Resume from './resume';
-import ROUTER from './common/router';
+import ROUTER from './common/constants/router';
 
 function Router() {
   return (

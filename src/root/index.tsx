@@ -5,11 +5,14 @@ import style from './index.module.less';
 import Logo from '@/assets/logo.png';
 import { useHistory } from 'react-router';
 import { shell } from 'electron';
-import { ROUTER_ENTRY } from '@/common/router';
+import { ROUTER_ENTRY } from '@/common/constants/router';
 import { isHttpOrHttpsUrl } from '@/utils/router';
+import { useSelector ,useDispatch} from 'react-redux';
+import { RootState ,actions} from '@/store';
 
 function Root() {
   const history = useHistory();
+  const appName = useSelector((state:RootState)=>state.global.appName);
 
   const actionToPage = (router: TSRouter.Item) => {
     if (isHttpOrHttpsUrl(router.url)) {
